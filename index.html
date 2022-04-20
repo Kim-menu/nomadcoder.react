@@ -6,17 +6,33 @@
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script>
         const root = document.getElementById("root");
-        const span = React.createElement(
-            "span",
+        const h3 = React.createElement(
+            "h3",
             {
-                id: "sexy-span",
+                id: "sexy-h3",
                 style: {
                     color: "red"
+                },
+                onMouseEnter: () => console.log("mouse enter")
+            },
+            "Hello I'm a H3"
+        );
+        const btn = React.createElement(
+            "button",
+            {
+                onClick: () => console.log("I'm clicked!"),
+                style: {
+                    backgroundColor: "tomato"
                 }
             },
-            "Hello I'm a span"
+            "Click me"
         );
-        ReactDOM.render(span, root);
+        const div = React.createElement(
+            "div",
+            null,
+            [h3, btn]
+        );
+        ReactDOM.render(div, root);
     </script>
 </body>
 </html>
